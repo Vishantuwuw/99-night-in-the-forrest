@@ -52,7 +52,7 @@ Section:AddParagraph({
     Title = "Paragraph"
 })
 
-Tab:AddButton({
+MainTab:AddButton({
     Title = "Inf Heath",
     Description = "just inf hp ",
     Callback = function()
