@@ -1,4 +1,4 @@
-local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local Library = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 
 function Init()
     local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
@@ -12,20 +12,13 @@ Init()
 Test()
 
 local Window = Fluent:CreateWindow({
-    Title = "VINI SCRIPTS " .. Fluent.Version,
-    SubTitle = "by vini",
+    Title = "Fluent " .. Fluent.Version,
+    SubTitle = "by dawid",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
     Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
     Theme = "Dark",
     MinimizeKey = Enum.KeyCode.LeftControl -- Used when theres no MinimizeKeybind
-})
-
-Fluent:Notify({
-        Title = "Thanks For Using My Scripts xd",
-        Content = "thanks:)",
-        SubContent = "SubContent", -- Optional
-        Duration = 5 -- Set to nil to make the notification not disappear
 })
 
 -- Fluent provides Lucide Icons, they are optional
@@ -43,19 +36,12 @@ InterfaceManager:SetLibrary(Fluent)
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
 SaveManager:BuildConfigSection(Tabs.Settings)
 
-Window:SelectTab(1)
+local Section = Tab:AddSection("Main")
 
-local Section = Tab:AddSection("Home")
-
-local Section = Tab:AddSection("Home")
-Section:AddParagraph({
-    Title = "Paragraph"
-})
-
-HomeTab:AddButton({
-    Title = "Inf Heath",
-    Description = "just inf hp ",
+MainTab:AddButton({
+    Title = "Button",
+    Description = "Very important button",
     Callback = function()
-        print("lmao u fell for that xd")
+        print("Hello, world!")
     end
 })
